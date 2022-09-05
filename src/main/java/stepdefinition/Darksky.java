@@ -93,6 +93,15 @@ public class Darksky {
     }
 
 
+    @Then("I verify today's lowest and highest temp is displayed correctly")
+    public void iVerifyTodaySLowestAndHighestTempIsDisplayedCorrectly() {
 
+        ArrayList<Integer> expected = darkskyHome.getExpectedTempList();
+        ArrayList<Integer> actual = darkskyHome.getActualTempList();
 
+        System.out.println("expected="+expected);
+        System.out.println("actual="+actual);
+
+        Assert.assertEquals("temperatures are not equal",expected,actual);
+    }
 }
